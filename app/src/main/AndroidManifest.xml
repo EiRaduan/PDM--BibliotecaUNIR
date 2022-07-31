@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BibliotecaUNIR">
         <activity
+            android:name=".Edicao"
+            android:exported="false" />
+        <activity
+            android:name=".Remocao"
+            android:exported="false" />
+        <activity
             android:name=".Pesquisa"
             android:exported="false" />
         <activity

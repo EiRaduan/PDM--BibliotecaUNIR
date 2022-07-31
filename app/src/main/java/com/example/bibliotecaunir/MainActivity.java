@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnCadastrar;
     private Button btnPesquisar;
+    private Button btnEditar;
+    private Button btnDeletar;
     private RadioGroup rd_PesquisarPor;
     private EditText edtPesquisar;
 
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         btnCadastrar = findViewById(R.id.btn_cadastrar);
         btnPesquisar = findViewById(R.id.btn_pesquisar);
+        btnEditar = findViewById(R.id.btn_editar);
+        btnDeletar = findViewById(R.id.btn_deletar);
         rd_PesquisarPor = findViewById(R.id.rb_pesquisar);
         edtPesquisar = findViewById(R.id.edt_pesquisar);
 
@@ -44,6 +48,22 @@ public class MainActivity extends AppCompatActivity {
                 String busca = edtPesquisar.getText().toString();
                 intent.putExtra("tipo", id);
                 intent.putExtra("busca", busca);
+                startActivity(intent);
+            }
+        });
+
+        btnEditar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Edicao.class);
+                startActivity(intent);
+            }
+        });
+
+        btnDeletar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Remocao.class);
                 startActivity(intent);
             }
         });
